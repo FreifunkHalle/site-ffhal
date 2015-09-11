@@ -23,7 +23,9 @@ GLUON_SITE_PACKAGES := \
 	gluon-status-page \
 	iwinfo \
 	iptables \
+	openvpn-polarssl\
 	haveged
+
 
 DEFAULT_GLUON_RELEASE := 0.7~exp$(shell date '+%Y%m%d')
 
