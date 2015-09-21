@@ -11,3 +11,13 @@ ar71xx-nand
 mpc85xx-generic
 x86-generic
 x86-kvm_guest
+
+## Changelog
+### exp20150918
+- hostname_prefix: ffharz
+- site_name: Freifunk Harz e.V.
+- mesh_bssid: 22:ca:ff:ee:ba:be - auf Kanal 2 korrigiert
+- mac: Macadresse geändert
+- fastd-vpn: zweiten Knoten hinzugefügt
+- autoupdater aktiviert
+- openvpn-polarssl Paket hinzugefügt 
