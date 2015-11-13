@@ -13,6 +13,11 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20151113
+Anpassung für den 3. Gateway
+- wichtig ist, das der peer im Namen kein Punkt oder Bindstrich hat sind läuft es in einen error!
+- korrektur der site.mk / openvpn-polarssl entfernt
+
 ### 20151028
 Anpassungen von André Kasper übernommen.
 http://www.zumpel.de/ffharz/
