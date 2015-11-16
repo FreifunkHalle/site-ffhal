@@ -13,6 +13,10 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20151116
+- site.conf - angepasst / 5GHz / Chan44 / 02:44:ca:ff:ee:ee
+https://wiki.freifunk.net/Freifunk_Berlin_Pberg:Kanal_BSSID
+
 ### 20151113
 
 - Anpassung für den 3. Gateway
