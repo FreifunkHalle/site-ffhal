@@ -1,0 +1,3 @@
+# QLB_Markt7
+# 60:e3:27:b7:d1:7a
+key "2fb0a8e42cd45e142e30060530f4fba73397e2e381fa7fc22a3cdd96650c49c0";
