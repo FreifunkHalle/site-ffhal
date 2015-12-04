@@ -13,6 +13,19 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20151116
+- site.conf - angepasst / 5GHz / Chan44 / 02:44:ca:ff:ee:ee
+https://wiki.freifunk.net/Freifunk_Berlin_Pberg:Kanal_BSSID
+
+### 20151113
+
+- Anpassung für den 3. Gateway
+- wichtig ist, das der peer im Namen kein Punkt oder Bindstrich hat sind läuft es in einen error!
+- Korrektur der site.mk / openvpn-polarssl entfernt
+- Release-Variable angepasst
+- Pfade für mirror1 geändert
+- mirror2 - mirror5 vorerst aus der Konfiguration entfernt
+
 ### 20151028
 Anpassungen von André Kasper übernommen.
 http://www.zumpel.de/ffharz/
