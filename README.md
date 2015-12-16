@@ -13,6 +13,13 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20151216
+- peer connections auf 2 gehoben
+- gw1 rausgenommen
+- ipv6 für gw2 und gw3 eingerichtet
+- port 53 und 80 eingerichtet / port 10000 auf 10001 geändert
+- mtu auf 1426 gehoben
+
 ### 20151116
 - site.conf - angepasst / 5GHz / Chan44 / 02:44:ca:ff:ee:ee
 https://wiki.freifunk.net/Freifunk_Berlin_Pberg:Kanal_BSSID
