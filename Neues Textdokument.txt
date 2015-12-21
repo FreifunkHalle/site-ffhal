@@ -1,0 +1,3 @@
+# BRL_Hotel-Bergkranz-1
+# c4:e9:84:f0:9f:90
+key "83884ce91572ea9f51365f56ff201cdfff4e14477d08ffe4cf68db0d5a17dc93"; 
