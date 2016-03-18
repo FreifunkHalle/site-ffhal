@@ -13,6 +13,12 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20160318
+- site.conf auf batman-adv 2013.4 zurück geändert
+- ETQ Server mit eingepflegt
+- Versionsnummer auf 0.8.2 stable gehoben und Stunden:Minuten entfernt
+- Port auf 10001 angepasst
+
 ### 20151216
 - peer connections auf 2 gehoben
 - gw1 rausgenommen
