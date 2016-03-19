@@ -13,6 +13,11 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20160319
+- PubKey korrigiert für ETQ
+- Versionsnummer auf 0.8.2.1 stable gehoben
+-- die .1 steht für ein weiteres Update
+
 ### 20160318
 - site.conf auf batman-adv 2013.4 zurück geändert
 - ETQ Server mit eingepflegt
