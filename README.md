@@ -13,6 +13,10 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20160320
+- Versionsnummer in site.mk auf 0.8.2.2 eingestellt
+- Zeitserver in site.conf angepasst -> time1.service.ffharz
+
 ### 20160319
 - PubKey korrigiert für ETQ
 - Versionsnummer auf 0.8.2.1 stable gehoben
