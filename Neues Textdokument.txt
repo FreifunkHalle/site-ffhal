@@ -1,0 +1,2 @@
+# QLB_Hotel_Balneolum
+key "2ac804e360220c66deb0be291781e32069d167b705a5b8917bd670a1e86b593c";
