@@ -13,6 +13,13 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20160529
+- autoupdater von ffho hinzugefügt
+- arp Optimierung von ffho hinzugefügt
+- site.conf -- GW ffharz hinzugefügt
+- Update auf gluon v2016.1.5
+- mit v2016.1.5 wird WR841N unterstützt
+
 ### 20160320
 - Versionsnummer in site.mk auf 0.8.2.2 eingestellt
 - Zeitserver in site.conf angepasst -> time1.service.ffharz

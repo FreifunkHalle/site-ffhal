@@ -25,16 +25,20 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	iptables \
 	firewall \
-	haveged
+	haveged \
+	ffho-node-tuning\
+	ffho-autoupdater-wifi-fallback\
+	ffho-autoupdater-wifi-fallback-legacy
 
 
-DEFAULT_GLUON_RELEASE := 0.8.2.2~stable$(shell date '+%Y%m%d')
+
+DEFAULT_GLUON_RELEASE := 0.8.2.2~exp$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
-GLUON_BRANCH ?= stable 
+GLUON_BRANCH ?= experimental 
 export GLUON_BRANCH
 
 GLUON_TARGET ?= ar71xx-generic
