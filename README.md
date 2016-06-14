@@ -13,6 +13,15 @@ x86-generic
 x86-kvm_guest
 
 ## Changelog
+### 20160614
+- technik@ auf key@ geändert
+- zweiten GW hinzugefügt
+- LH GW entfernt
+- 802.11s hinzugefügt aber disabled
+- HT20 Mode für 5GHz auf HT40 geändert
+- ntp Server auf internen angepasst
+- AR150 von GL.Inet hinzugefügt
+
 ### 20160529
 - autoupdater von ffho hinzugefügt
 - arp Optimierung von ffho hinzugefügt
