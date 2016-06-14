@@ -40,6 +40,7 @@ verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 - HT20 Mode für 5GHz auf HT40 geändert
 - ntp Server auf internen angepasst
 - AR150 von GL.Inet hinzugefügt
+- gluon-status-page angepasst / Kontaktdaten entfernt
 
 ### 20160529
 - autoupdater von ffho hinzugefügt
