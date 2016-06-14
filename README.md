@@ -11,7 +11,9 @@ git checkout v2016.1.5
 cd ..
 git clone https://gitlab.com/ff-harz/gluon-site.git
 cp -r gluon-site gluon/site
-cd .. gluon
+git clone https://git.harz.freifunk.net/ff-harz/ffharz-packages.git
+cp -r ffharz-packages/*-* gluon/package
+cd gluon
 make update
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```

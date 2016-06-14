@@ -20,7 +20,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-next-node \
 	gluon-radvd \
 	gluon-setup-mode \
-	gluon-status-page \
+	ffharz-gluon-status-page \
 	iputils-ping6 \
 	iwinfo \
 	iptables \
