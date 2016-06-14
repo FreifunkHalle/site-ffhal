@@ -2,15 +2,32 @@
 site.conf für das Release 0.7 / v2015.1.1
 Und am ende fallen dann alle images für das target ar71xx-generic raus. das sind die wichtigsten.
 Für weitere targets füre einfach folgendes nach dem make aus:
+## eigenes Image bauen
 ```
-make GLUON_TARGET=target-name
+git clone https://github.com/freifunk-gluon/gluon
+cd gluon
+git branch -a
+git checkout v2016.1.5
+cd ..
+git clone https://gitlab.com/ff-harz/gluon-site.git
+cp -r gluon-site gluon/site
+cd .. gluon
+make update
+make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```
-verfügbare Targets sind:
+verfügbare `$TARGET` sind:
 ar71xx-generic
 ar71xx-nand
 mpc85xx-generic
 x86-generic
 x86-kvm_guest
+
+verfügbare `$BRANCH` sind:
+beta
+experimental
+stable
+
+verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 ## Changelog
 ### 20160614
