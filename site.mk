@@ -1,6 +1,5 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
-	gluon-authorized-keys \
 	gluon-alfred \
 	gluon-respondd \
 	gluon-autoupdater \
@@ -33,7 +32,7 @@ GLUON_SITE_PACKAGES := \
 
 
 
-DEFAULT_GLUON_RELEASE := 0.8.2.2~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.8.22~exp$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
