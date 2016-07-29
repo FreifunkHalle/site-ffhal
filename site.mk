@@ -1,6 +1,5 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
-	gluon-alfred \
 	gluon-respondd \
 	gluon-autoupdater \
 	gluon-config-mode-core \
@@ -32,7 +31,7 @@ GLUON_SITE_PACKAGES := \
 
 
 
-DEFAULT_GLUON_RELEASE := 0.8.22~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.8.3~exp$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -42,6 +41,8 @@ GLUON_BRANCH ?= experimental
 export GLUON_BRANCH
 
 GLUON_TARGET ?= ar71xx-generic
+#für D-Link DIR-860L / BROKEN=1 kompilieren
+#GLUON_TARGET ?= ramips-mt7621 
 export GLUON_TARGET
 
 GLUON_LANGS ?= de en
