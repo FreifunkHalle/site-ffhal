@@ -32,6 +32,13 @@ stable
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 ## Changelog
+### 20160729
+- alfred entfernt
+- SSID für 5GHz angepasst
+- SSID für 8011.2s angepasst für 5GHz und 2GHz
+- ibss0 deaktiviert und entfernt
+- rampis für DIR-860L hinzugefügt
+
 ### 20160614
 - technik@ auf key@ geändert
 - zweiten GW hinzugefügt
