@@ -44,3 +44,4 @@ GLUON_TARGET ?= ar71xx-generic
 export GLUON_TARGET
 
 GLUON_LANGS ?= de en
+GLUON_REGION = eu

@@ -32,6 +32,13 @@ stable
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 ## Changelog
+### 20160910
+- Emailadresse in i8ln angepasst
+- Kanal 5GHz von 44 auf 36 korrigiert (Proleme mit dem verbinden auf 44)
+- fallback autoupdater entfernt aus site.mk
+- SGH Knoten für Umzug in site.conf konfiguriert
+- für 2016.1.6 REGIO Abfrage in site.mk hinzugefügt
+
 ### 20160729
 - alfred entfernt
 - SSID für 5GHz angepasst
