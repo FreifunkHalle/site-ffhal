@@ -1,5 +1,5 @@
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-14 \
+	gluon-mesh-batman-adv-15 \
 	gluon-respondd \
 	gluon-autoupdater \
 	gluon-config-mode-core \
@@ -25,13 +25,11 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	firewall \
 	haveged \
-	ffho-node-tuning\
-	ffho-autoupdater-wifi-fallback\
-	ffho-autoupdater-wifi-fallback-legacy
+	ffho-node-tuning
 
 
 
-DEFAULT_GLUON_RELEASE := 0.8.3~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.8.31~exp$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
