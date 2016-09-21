@@ -25,17 +25,18 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	firewall \
 	haveged \
+	ffharz-autoupdater-path \
 	ffho-node-tuning
 
 
 
-DEFAULT_GLUON_RELEASE := 0.8.31~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.8.32~stable$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
-GLUON_BRANCH ?= experimental 
+GLUON_BRANCH ?= stable 
 export GLUON_BRANCH
 
 GLUON_TARGET ?= ar71xx-generic
