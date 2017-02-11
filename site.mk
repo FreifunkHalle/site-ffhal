@@ -18,6 +18,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
 	gluon-radvd \
+	gluon-radv-filterd \
 	gluon-setup-mode \
 	ffharz-gluon-status-page \
 	iputils-ping6 \
@@ -25,26 +26,25 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	firewall \
 	haveged \
-	ffharz-autoupdater-path \
-	ffho-node-tuning
+	ffharz-autoupdater-path 
 
 
-
-DEFAULT_GLUON_RELEASE := 0.8.33~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.8.35~testing$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
-GLUON_BRANCH ?=experimental
+GLUON_BRANCH ?= testing
 export GLUON_BRANCH
 
-GLUON_TARGET ?= ar71xx-generic
+#GLUON_TARGET ?= ar71xx-generic
 #für D-Link DIR-860L / BROKEN=1 kompilieren
 #GLUON_TARGET ?= ramips-mt7621 
-export GLUON_TARGET
+#export GLUON_TARGET
+#GLUON_BUILDDIR = build/$(GLOUN_TARGET)/
 
 GLUON_LANGS ?= de en
 GLUON_REGION = eu
 GLUON_ATH10K_MESH = 11s
-BROKEN = 1
+BROKEN = 1 
