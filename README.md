@@ -18,13 +18,14 @@ make update
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```
 verfügbare `$TARGET` sind:
-- ar71xx-generic
+- ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
 - ar71xx-nand
 - mpc85xx-generic
 - x86-generic
 - x86-kvm_guest
-- brcm2708-bcm2709
-- brcm2708-bcm2708
+- ramips-mt7621 <- D-Link DIR860L/E
+- brcm2708-bcm2709 <- Raspberry Pi 2
+- brcm2708-bcm2708 <- Raspberry Pi 1
 
 verfügbare `$BRANCH` sind:
 - beta
