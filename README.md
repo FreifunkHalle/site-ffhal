@@ -7,7 +7,7 @@ Für weitere targets füre einfach folgendes nach dem make aus:
 git clone https://github.com/freifunk-gluon/gluon
 cd gluon
 git branch -a
-git checkout v2016.1.5
+git checkout v2016.2.2
 cd ..
 git clone https://git.harz.freifunk.net/ff-harz/gluon-site 
 cp -r gluon-site gluon/site
