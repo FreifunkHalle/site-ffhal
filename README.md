@@ -18,16 +18,18 @@ make update
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```
 verfügbare `$TARGET` sind:
-ar71xx-generic
-ar71xx-nand
-mpc85xx-generic
-x86-generic
-x86-kvm_guest
+- ar71xx-generic
+- ar71xx-nand
+- mpc85xx-generic
+- x86-generic
+- x86-kvm_guest
+- brcm2708-bcm2709
+- brcm2708-bcm2708
 
 verfügbare `$BRANCH` sind:
-beta
-experimental
-stable
+- beta
+- experimental
+- stable
 
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
