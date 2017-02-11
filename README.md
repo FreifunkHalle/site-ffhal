@@ -32,6 +32,12 @@ stable
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 ## Changelog
+### 20170211
+- Pfad für autoupdater hinzugefügt (jetzt mit DNS und IPv6)
+- gluon-radvd-filter pkg hinzugefügt -> siehe https://blog.freifunk-mainz.de/2017/01/08/ipv6-optimierungen-im-freifunk-mainz-wiesbaden-und-umgebung-mwu/
+- IBSS0 wieder verfügbar gemacht in der site.conf
+- Versionsspezifische Updates mit eingebaut -> siehe http://gluon.readthedocs.io/en/v2016.2.2/
+
 ### 20160910
 - Emailadresse in i8ln angepasst
 - Kanal 5GHz von 44 auf 36 korrigiert (Proleme mit dem verbinden auf 44)
