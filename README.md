@@ -9,7 +9,7 @@ cd gluon
 git branch -a
 git checkout v2016.1.5
 cd ..
-git clone https://gitlab.com/ff-harz/gluon-site.git
+git clone https://git.harz.freifunk.net/ff-harz/gluon-site 
 cp -r gluon-site gluon/site
 git clone https://git.harz.freifunk.net/ff-harz/ffharz-packages.git
 cp -r ffharz-packages/*-* gluon/package
