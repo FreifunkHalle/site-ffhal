@@ -16,18 +16,14 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-private-wifi \
 	gluon-luci-wifi-config \
 	gluon-mesh-vpn-fastd \
-	gluon-next-node \
 	gluon-radvd \
-#	gluon-radvd-filterd \
+	gluon-radv-filterd \
 	gluon-setup-mode \
-	ffharz-gluon-status-page \
 	iputils-ping6 \
 	iwinfo \
 	iptables \
 	firewall \
-	haveged \
-	ffharz-autoupdater-path 
-
+	haveged
 
 DEFAULT_GLUON_RELEASE := 0.8.35~exp$(shell date '+%Y%m%d')
 
@@ -38,10 +34,10 @@ GLUON_PRIORITY ?= 0
 GLUON_BRANCH ?= experimental 
 export GLUON_BRANCH
 
-#GLUON_TARGET ?= ar71xx-generic
+GLUON_TARGET ?= ar71xx-generic
 #für D-Link DIR-860L / BROKEN=1 kompilieren
 #GLUON_TARGET ?= ramips-mt7621 
-#export GLUON_TARGET
+export GLUON_TARGET
 #GLUON_BUILDDIR = build/$(GLOUN_TARGET)/
 
 GLUON_LANGS ?= de en
