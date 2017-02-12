@@ -18,7 +18,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
 	gluon-radvd \
-	gluon-radv-filterd \
+#	gluon-radvd-filterd \
 	gluon-setup-mode \
 	ffharz-gluon-status-page \
 	iputils-ping6 \
