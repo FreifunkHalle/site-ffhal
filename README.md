@@ -42,6 +42,12 @@ verfügbare `$BRANCH` sind:
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 ## Changelog
+### 20170212
+- Anleitung in README.md angepasst
+- kurzfristig die Pakete von ffharz aus `site.mk` entfernt
+- `gluon-radv-filterd` in die site.mk für Branch `radv-filterd` hinzugefügt
+- `gluon-next-node` aus `site.mk` entfernt
+
 ### 20170211
 - Pfad für autoupdater hinzugefügt (jetzt mit DNS und IPv6)
 - gluon-radvd-filter pkg hinzugefügt -> siehe https://blog.freifunk-mainz.de/2017/01/08/ipv6-optimierungen-im-freifunk-mainz-wiesbaden-und-umgebung-mwu/
