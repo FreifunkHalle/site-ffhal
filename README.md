@@ -17,6 +17,13 @@ cd gluon
 make update
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```
+Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie folgt aus.
+
+```
+make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH
+```
+Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
+
 verfügbare `$TARGET` sind:
 - ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
 - ar71xx-nand
