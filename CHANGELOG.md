@@ -1,4 +1,8 @@
 # Changelog
+## 20170213
+- Fehler in der autoupdater Config behoben
+- gluon-next-node default in site.mk wieder hinzugefügt für Testzwecke
+
 ## 20170212
 - Anleitung in README.md angepasst
 - kurzfristig die Pakete von ffharz aus `site.mk` entfernt
