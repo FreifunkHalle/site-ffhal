@@ -8,6 +8,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-mesh-vpn \
 	gluon-config-mode-geo-location \
 	gluon-config-mode-contact-info \
+	gluon-status-page \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-filter-multicast \
 	gluon-luci-admin \
