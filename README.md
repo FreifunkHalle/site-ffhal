@@ -22,6 +22,12 @@ Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie fol
 ```
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH
 ```
+Bei ar71xx-gernic muss noch die REGION mit gegeben werden.
+
+```
+make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH GLUON_REGION=eu
+```
+
 Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
 
 verfügbare `$TARGET` sind:
