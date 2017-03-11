@@ -18,7 +18,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-wifi-config \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
-	gluon-radv-filterd \
 	gluon-setup-mode \
 	iputils-ping6 \
 	iwinfo \
