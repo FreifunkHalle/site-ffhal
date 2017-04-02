@@ -23,7 +23,8 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	iptables \
 	firewall \
-	haveged
+	haveged \
+	ffharz-reboot
 
 DEFAULT_GLUON_RELEASE := 0.8.35~exp$(shell date '+%Y%m%d')
 
