@@ -2,6 +2,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
 	gluon-respondd \
 	gluon-autoupdater \
+	gluon-next-node \
+	gluon-node-info \
 	gluon-config-mode-core \
 	gluon-config-mode-hostname \
 	gluon-config-mode-autoupdater \
