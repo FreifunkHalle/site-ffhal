@@ -11,6 +11,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-geo-location \
 	gluon-config-mode-contact-info \
 	gluon-status-page \
+	gluon-ebtables \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-filter-multicast \
 	gluon-luci-admin \
@@ -27,7 +28,7 @@ GLUON_SITE_PACKAGES := \
 	firewall \
 	haveged \
 	ffharz-reboot \
-	ffharz-autoupdater-path 
+	ffho-node-tuning
 
 DEFAULT_GLUON_RELEASE := 0.8.35~exp$(shell date '+%Y%m%d')
 
