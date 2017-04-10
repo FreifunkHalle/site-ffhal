@@ -1,32 +1,28 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
+	gluon-alfred \
 	gluon-respondd \
 	gluon-autoupdater \
-	gluon-next-node \
-	gluon-node-info \
-	gluon-config-mode-core \
-	gluon-config-mode-hostname \
 	gluon-config-mode-autoupdater \
-	gluon-config-mode-mesh-vpn \
-	gluon-config-mode-geo-location \
 	gluon-config-mode-contact-info \
-	gluon-status-page \
-	gluon-ebtables \
-	gluon-ebtables-filter-ra-dhcp \
+	gluon-config-mode-core \
+	gluon-config-mode-geo-location \
+	gluon-config-mode-hostname \
+	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
+	gluon-ebtables-filter-ra-dhcp \
 	gluon-luci-admin \
 	gluon-luci-autoupdater \
 	gluon-luci-portconfig \
-	gluon-luci-private-wifi \
 	gluon-luci-wifi-config \
+	gluon-next-node \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
-	iputils-ping6 \
-	iwinfo \
-	iptables \
-	firewall \
+	gluon-status-page \
 	haveged \
+	iptables \
+	iwinfo \
 	ffharz-reboot \
 	ffho-node-tuning
 
