@@ -1,4 +1,11 @@
 # Changelog
+## 20170606
+- gluon-ssid-changer hinzugefügt von ffaachen/ffgoe
+- Änderungen von ffgoe in site.mk übernommen / Zusatzpakete mit einkonfiuriert wie joe, kmod-usb, etc.
+- Tunnelverbindung auf einen Tunnel pro Gateway reduziert / für das segmentieren des Netzwerkes zukünfitg
+- Verschlüsselung für fastd auf 'null' gesetzt / keine Verschlüsselung der Tunnel mehr
+- Versionsnummer der experimental von 0.8.35 auf 0.8.37 gerändert
+
 ## 20170213
 - Fehler in der autoupdater Config behoben
 - gluon-next-node default in site.mk wieder hinzugefügt für Testzwecke
