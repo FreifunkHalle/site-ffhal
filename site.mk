@@ -11,21 +11,30 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
-	gluon-luci-admin \
-	gluon-luci-autoupdater \
-	gluon-luci-portconfig \
-	gluon-luci-wifi-config \
-	gluon-next-node \
+	gluon-web-admin \
+	gluon-web-autoupdater \
+	gluon-web-wifi-config \
+	gluon-web-network \
+	gluon-web-private-wifi \
+	gluon-web-node-role \
+	gluon-web-logging \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
+	gluon-neighbour-info \
+	gluon-node-info \
 	gluon-setup-mode \
 	gluon-status-page \
 	haveged \
 	iptables \
 	iwinfo \
 	ffharz-reboot \
-	ffho-node-tuning\
-	gluon-ssid-changer
+	ffharz-fastd \
+	gluon-ssid-changer \
+	ffho-node-tuning
+
+#	freifunk-p2pblock \
+#	ffharz-reboot \
+#	gluon-ssid-changer
 	
 	# support the USB stack
 USB_PACKAGES_BASIC := \
@@ -121,7 +130,7 @@ GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PA
 GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PACKAGES_STORAGE)
 
 
-DEFAULT_GLUON_RELEASE := 0.8.37~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.9.1~exp$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -130,10 +139,10 @@ GLUON_PRIORITY ?= 0
 GLUON_BRANCH ?= experimental 
 export GLUON_BRANCH
 
-GLUON_TARGET ?= ar71xx-generic
+#GLUON_TARGET ?= ar71xx-generic
 #für D-Link DIR-860L / BROKEN=1 kompilieren
 #GLUON_TARGET ?= ramips-mt7621 
-export GLUON_TARGET
+#export GLUON_TARGET
 #GLUON_BUILDDIR = build/$(GLOUN_TARGET)/
 
 GLUON_LANGS ?= de en
