@@ -37,8 +37,10 @@ verfügbare `$TARGET` sind:
 - x86-generic
 - x86-kvm_guest
 - ramips-mt7621 <- D-Link DIR860L/E
+- brcm2708-bcm2710 <- Raspberry Pi 3
 - brcm2708-bcm2709 <- Raspberry Pi 2
 - brcm2708-bcm2708 <- Raspberry Pi 1
+- sunix <- A20 aka Banana Pi
 
 verfügbare `$BRANCH` sind:
 - beta
@@ -48,3 +50,17 @@ verfügbare `$BRANCH` sind:
 verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 in CHANGELOG.md liegen die Info's zu den Änderungen!
+
+## Image signieren
+
+- ecdsautil muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
+- das Manifest muss erstellt und dann signiert werden
+
+`make manifest GLUON_BRANCH=experimental`
+
+- wenn build länger zurückliegt muss das Release Datum mit `GLUON_RELEASE` mit angegeben werden
+
+`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=0.9.3~20171024`
+
+
+Buildpad: http://pad.harz.freifunk.net/p/gluon
