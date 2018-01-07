@@ -17,7 +17,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-web-network \
 	gluon-web-private-wifi \
 	gluon-web-node-role \
-	gluon-web-logging \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-neighbour-info \
