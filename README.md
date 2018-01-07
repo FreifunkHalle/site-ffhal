@@ -9,10 +9,10 @@ cd gluon
 git branch -a
 git checkout v2016.2.2
 cd ..
-git clone https://git.harz.freifunk.net/ff-harz/gluon-site 
-cp -r gluon-site gluon/site
-git clone https://git.harz.freifunk.net/ff-harz/ffharz-packages.git
-cp -r ffharz-packages/*-* gluon/package
+git clone https://github.com/ffharz/site-ffharz.git
+cp -r site-ffharz gluon/site
+git clone https://github.com/ffharz/gluon-package.git
+cp -r gluon-package/*-* gluon/package
 cd gluon
 make update
 make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
