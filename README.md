@@ -1,5 +1,5 @@
 # site-ffharz
-site.conf für das Release 0.8.2 / v2016.1.5
+site.conf für das Release 0.9.4 / v2017.1.x
 Und am ende fallen dann alle images für das target ar71xx-generic raus. das sind die wichtigsten.
 Für weitere targets füre einfach folgendes nach dem make aus:
 ## eigenes Image bauen
@@ -7,7 +7,7 @@ Für weitere targets füre einfach folgendes nach dem make aus:
 git clone https://github.com/freifunk-gluon/gluon
 cd gluon
 git branch -a
-git checkout v2016.2.2
+git checkout v2017.1.x
 cd ..
 git clone https://github.com/ffharz/site-ffharz.git
 cp -r site-ffharz gluon/site
@@ -32,14 +32,22 @@ Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht v
 
 verfügbare `$TARGET` sind:
 - ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
+- ar71xx-tiny <- WR841 usw. mit 4MB Flash
 - ar71xx-nand
-- mpc85xx-generic
-- x86-generic
-- x86-kvm_guest
-- ramips-mt7621 <- D-Link DIR860L/E
-- brcm2708-bcm2710 <- Raspberry Pi 3
-- brcm2708-bcm2709 <- Raspberry Pi 2
 - brcm2708-bcm2708 <- Raspberry Pi 1
+- brcm2708-bcm2709 <- Raspberry Pi 2
+- brcm2708-bcm2710 <- Raspberry Pi 3
+- mpc85xx-generic
+- ramips-mt7621 <- D-Link DIR860L/E
+- x86-generic
+- x86-geode
+- x86-64
+- ar71xx-mikrotik
+- ipq806x
+- mvebu
+- ramips-mt7628
+- ramips-rt305x
+- x86-kvm_guest
 - sunix <- A20 aka Banana Pi
 
 verfügbare `$BRANCH` sind:
