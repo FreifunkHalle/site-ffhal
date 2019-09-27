@@ -1,4 +1,4 @@
-# site-ffharz
+# site-ffhal
 site.conf für das Release 0.9.4 / v2017.1.x
 Und am ende fallen dann alle images für das target ar71xx-generic raus. das sind die wichtigsten.
 Für weitere targets füre einfach folgendes nach dem make aus:

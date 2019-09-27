@@ -26,13 +26,14 @@ GLUON_SITE_PACKAGES := \
 	haveged \
 	iptables \
 	iwinfo \
-	ffharz-reboot \
-	ffharz-fastd \
-	gluon-ssid-changer \
-	ffho-node-tuning
+	ffhal-ssh-keys \
+#	gluon-ssid-changer 
+#	fharz-reboot 
+#	ffharz-reboot \
+#	ffharz-fastd \
+#	ffho-node-tuning
 
 #	freifunk-p2pblock \
-#	ffharz-reboot \
 #	gluon-ssid-changer
 	
 	# support the USB stack
@@ -129,7 +130,7 @@ GLUON_ARCHERC7_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PA
 GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_PACKAGES_STORAGE)
 
 
-DEFAULT_GLUON_RELEASE := 0.9.1~$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.0.1~$(shell date '+%Y%m%d')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
