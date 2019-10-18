@@ -1,4 +1,9 @@
 # Changelog
+## 20191009
+- Freifunk Halle Firmware 1.0.1, Gluon-Release 2018.2.x, OpenWRT v2018.06-SNAPSHOT r7835+24-89808e211c
+- Den Zeitserver der Physikalisch-Technische-Bundesanstalt eingetragen
+- Dokumentation und Changelog an Freifunk Halle anpassen
+
 ## 20170213
 - Fehler in der autoupdater Config behoben
 - gluon-next-node default in site.mk wieder hinzugefügt für Testzwecke

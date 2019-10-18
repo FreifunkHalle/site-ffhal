@@ -1,28 +1,22 @@
 # site-ffhal
-site.conf-Datei für Freifunk Halle Firmware 1.0.1, Gluon-Release 2018.2.x, OpenWRT v2018.06-SNAPSHOT r7835+24-89808e211c
-
-## eigene Images bauen
-Diese drei Repositories in einen Bau-Ordner klonen, z.B. ~/freifunk/ (einen ssh-Key im github hinterlegen vorher):
+site.conf für das Release 0.9.4 / v2017.1.x
+Und am ende fallen dann alle images für das target ar71xx-generic raus. das sind die wichtigsten.
+Für weitere targets füre einfach folgendes nach dem make aus:
+## eigenes Image bauen
 ```
-git clone git@github.com:FreifunkHalle/site-ffhal.git
-git clone git@github.com:FreifunkHalle/gluon-package.git
-git clone git@github.com:FreifunkHalle/gluon-changes.git
+git clone https://github.com/freifunk-gluon/gluon
+cd gluon
+git branch -a
+git checkout v2017.1.x
+cd ..
+git clone https://github.com/ffharz/site-ffharz.git
+cp -r site-ffharz gluon/site
+git clone https://github.com/ffharz/gluon-package.git
+cp -r gluon-package/*-* gluon/package
+cd gluon
+make update
+make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH prepare image/$PROFILE
 ```
-
-### site.conf und Freifunk-Halle Anpassungen verlinken
-```
-~/freifunk/gluon-changes$ ln -s ~/freifunk/site-ffhal/ site
-~/freifunk/gluon-changes/package$ ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
-```
-
-### Firmware bauen
-```
-~/freifunk/gluon-changes$ make update
-~/freifunk/gluon.changes$ make GLUON_TARGET=ar71xx-generic GLUON_BRANCH=stable GLUON_REGION=eu
-```
-
-### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
-
 Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie folgt aus.
 
 ```
@@ -65,7 +59,7 @@ verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
 
 in CHANGELOG.md liegen die Info's zu den Änderungen!
 
-## Image signieren (to do)
+## Image signieren
 
 - ecdsautil muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
 - das Manifest muss erstellt und dann signiert werden
