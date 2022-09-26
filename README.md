@@ -18,7 +18,10 @@ git clone git@github.com:FreifunkHalle/gluon-changes.git
 ### Firmware bauen
 ```
 ~/freifunk/gluon-changes$ make update
-~/freifunk/gluon.changes$ make GLUON_TARGET=ar71xx-generic GLUON_BRANCH=stable GLUON_REGION=eu
+~/freifunk/gluon.changes$ make GLUON_TARGET=ar71xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+~/freifunk/gluon.changes$ make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+~/freifunk/gluon.changes$ make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+~/freifunk/gluon.changes$ make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
 ```
 
 ### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
@@ -26,12 +29,12 @@ git clone git@github.com:FreifunkHalle/gluon-changes.git
 Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie folgt aus.
 
 ```
-make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH
+make GLUON_TARGET=$TARGET GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=true
 ```
 Bei ar71xx-gernic muss noch die REGION mit gegeben werden.
 
 ```
-make GLUON_TARGET=$TARGET GLUON_BRANCHE=$BRANCH GLUON_REGION=eu
+make GLUON_TARGET=$TARGET GLUON_REGION=eu GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=true
 ```
 
 Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
@@ -40,6 +43,7 @@ verfügbare `$TARGET` sind:
 - ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
 - ar71xx-tiny <- WR841 usw. mit 4MB Flash
 - ar71xx-nand
+- ath79-generic
 - brcm2708-bcm2708 <- Raspberry Pi 1
 - brcm2708-bcm2709 <- Raspberry Pi 2
 - brcm2708-bcm2710 <- Raspberry Pi 3
