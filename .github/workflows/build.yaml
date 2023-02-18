@@ -1,0 +1,44 @@
+name: build
+
+on: workflow_dispatch
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install requirements
+        run: |
+          sudo apt update 
+          sudo apt install --yes make gcc libncurses-dev cpp gpp g++ unzip gawk
+      - name: checkout site
+        uses: actions/checkout@v3
+        with:
+          path: freifunk/site-ffhal
+
+      - name: clone gluon-changes
+        uses: actions/checkout@v3
+        with:
+          repository: FreifunkHalle/gluon-package
+          path: freifunk/gluon-package
+
+      - name: clone gluon-package
+        uses: actions/checkout@v3
+        with:
+          repository: FreifunkHalle/gluon-changes
+          path: freifunk/gluon-changes
+
+      - name: create symlinks
+        run: |
+          ln -s ./freifunk/site ./freifunk/gluon-changes/site
+          ln -s ./freifunk/gluon-package/ffhal-ssh-keys ./freifunk/gluon-changes/package/
+      - name: update repo
+        run: |
+          cd ./freifunk
+          find . -maxdepth 3
+          cd gluon-changes
+          make update
+      - name: building firmware
+        run: |
+          cd ${{ env.BUILDDIR }}/gluon-changes
+          make GLUON_TARGET=ar71xx-generic GLUON_BRANCH=stable GLUON_REGION=eu
