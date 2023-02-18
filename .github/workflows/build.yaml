@@ -37,6 +37,7 @@ jobs:
           cd ./freifunk
           find . -maxdepth 3
           cd gluon-changes
+          ls -lah
           make update
       - name: building firmware
         run: |
