@@ -14,7 +14,7 @@ jobs:
       - name: checkout site
         uses: actions/checkout@v3
         with:
-          path: freifunk/site-ffhal
+          path: freifunk/site
 
       - name: clone gluon-changes
         uses: actions/checkout@v3
