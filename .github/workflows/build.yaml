@@ -42,4 +42,7 @@ jobs:
       - name: building firmware
         run: |
           cd ./freifunk/gluon-changes
-          make GLUON_TARGET=ar71xx-generic GLUON_BRANCH=stable GLUON_REGION=eu
+          make GLUON_TARGET=ar71xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
