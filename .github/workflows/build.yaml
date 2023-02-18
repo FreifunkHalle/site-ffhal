@@ -30,8 +30,8 @@ jobs:
 
       - name: create symlinks
         run: |
-          ln -s ${pwd}/freifunk/site ./freifunk/gluon-changes/site
-          ln -s ${pwd}/freifunk/gluon-package/ffhal-ssh-keys ./freifunk/gluon-changes/package/
+          ln -s $(pwd)/freifunk/site ./freifunk/gluon-changes/site
+          ln -s $(pwd)/freifunk/gluon-package/ffhal-ssh-keys ./freifunk/gluon-changes/package/
       - name: update repo
         run: |
           cd ./freifunk
