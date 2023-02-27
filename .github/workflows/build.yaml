@@ -50,7 +50,9 @@ jobs:
           touch output/bla/file2
       
       - name: Write private key file from base64-encoded secret
-        run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
+        run: |
+          echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
+          chmod 600 /tmp/ssh-private-key.pem
       
       - name: Get date
         id: date
