@@ -57,7 +57,8 @@ jobs:
         run: echo "date=$(date +%Y-%m-%d_%H%M)" >> GITHUB_OUTPUT
 
       - name: Copy files to freifunk server
-        run: sftp -i /tmp/ssh-private-key.pem <<END
+        run: |
+        sftp -i /tmp/ssh-private-key.pem <<END
           mkdir ${{ steps.date.outputs.date }}
           put -R output/* data/${{ steps.date.outputs.date }}/
           END
