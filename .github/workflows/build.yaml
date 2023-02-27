@@ -54,7 +54,7 @@ jobs:
       
       - name: Get date
         id: date
-        run: echo "date=${date +%Y-%m-%d_%H%M}" >> GITHUB_OUTPUT
+        run: echo "date=$(date +%Y-%m-%d_%H%M)" >> GITHUB_OUTPUT
 
       - name: Copy files to freifunk server
         run: sftp -i /tmp/ssh-private-key.pem <<END
