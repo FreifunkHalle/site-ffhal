@@ -43,11 +43,21 @@ jobs:
           cd ./freifunk/gluon-changes
           #make GLUON_TARGET=ar71xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           #make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          #make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           #make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          mkdir -p output/bla
+          touch output/file
+          touch output/bla/file2
       
       - name: Write private key file from base64-encoded secret
         run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
       
+      - name: Get date
+        id: date
+        run: echo "date=${date +%Y-%m-%d_%H%M}" >> GITHUB_OUTPUT
+
       - name: Copy files to freifunk server
-        run: scp -i /tmp/ssh-private-key.pem -R output/* github@www.freifunk-halle.org:/srv/github
+        run: sftp -i /tmp/ssh-private-key.pem <<END
+          mkdir ${{ step.data.outputs.date }}
+          put -R output/* data/${{ step.data.outputs.date }}/
+          END
