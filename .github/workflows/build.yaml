@@ -58,7 +58,7 @@ jobs:
 
       - name: Copy files to freifunk server
         run: |
-          sftp -i /tmp/ssh-private-key.pem <<END
+          sftp -i /tmp/ssh-private-key.pem github@freifunk-halle.org <<END
           mkdir ${{ steps.date.outputs.date }}
           put -R output/* data/${{ steps.date.outputs.date }}/
           END
