@@ -43,11 +43,8 @@ jobs:
           cd ./freifunk/gluon-changes
           #make GLUON_TARGET=ar71xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           #make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          #make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           #make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          mkdir -p output/bla
-          touch output/file
-          touch output/bla/file2
       
       - name: Write private key file from base64-encoded secret
         run: |
