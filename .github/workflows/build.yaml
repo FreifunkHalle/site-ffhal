@@ -47,7 +47,17 @@ jobs:
           #make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
       
       - name: Write private key file from base64-encoded secret
-        run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
+        run: |
+          echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
+          chmod 600 /tmp/ssh-private-key.pem
       
+      - name: Get date
+        id: date
+        run: echo "date=$(date +%Y-%m-%d_%H%M)" >> "$GITHUB_OUTPUT"
+
       - name: Copy files to freifunk server
-        run: scp -i /tmp/ssh-private-key.pem -R output/* github@www.freifunk-halle.org:/srv/github
+        run: |
+          sftp -o StrictHostKeyChecking=no -i /tmp/ssh-private-key.pem github@www.freifunk-halle.org <<END
+          mkdir data/${{ steps.date.outputs.date }}
+          put -R ./freifunk/gluon-changes/output/* data/${{ steps.date.outputs.date }}/
+          END
