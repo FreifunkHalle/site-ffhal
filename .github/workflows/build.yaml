@@ -58,6 +58,6 @@ jobs:
 
       - name: Copy files to freifunk server
         run: sftp -i /tmp/ssh-private-key.pem <<END
-          mkdir ${{ steps.data.outputs.date }}
-          put -R output/* data/${{ steps.data.outputs.date }}/
+          mkdir ${{ steps.date.outputs.date }}
+          put -R output/* data/${{ steps.date.outputs.date }}/
           END
