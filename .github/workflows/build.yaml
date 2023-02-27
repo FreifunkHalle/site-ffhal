@@ -62,5 +62,5 @@ jobs:
         run: |
           sftp -o StrictHostKeyChecking=no -i /tmp/ssh-private-key.pem github@www.freifunk-halle.org <<END
           mkdir data/${{ steps.date.outputs.date }}
-          put -R output/* data/${{ steps.date.outputs.date }}/
+          put -R ./freifunk/gluon-changes/output/* data/${{ steps.date.outputs.date }}/
           END
