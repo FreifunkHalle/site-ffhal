@@ -32,10 +32,12 @@ jobs:
         run: |
           ln -s $(pwd)/freifunk/site ./freifunk/gluon-changes/site
           ln -s $(pwd)/freifunk/gluon-package/ffhal-ssh-keys ./freifunk/gluon-changes/package/
+      
       - name: update repo
         run: |
           cd ./freifunk/gluon-changes
           make update
+      
       - name: building firmware
         run: |
           cd ./freifunk/gluon-changes
@@ -43,3 +45,9 @@ jobs:
           #make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
           #make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+      
+      - name: Write private key file from base64-encoded secret
+        run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
+      
+      - name: Copy files to freifunk server
+        run: scp -i /tmp/ssh-private-key.pem -R output/* github@www.freifunk-halle.org:/srv/github
