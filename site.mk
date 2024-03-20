@@ -1,42 +1,4 @@
-GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-alfred \
-	gluon-respondd \
-	gluon-autoupdater \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-core \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-web-admin \
-	gluon-web-autoupdater \
-	gluon-web-wifi-config \
-	gluon-web-network \
-	gluon-web-private-wifi \
-	gluon-web-node-role \
-	gluon-mesh-vpn-fastd \
-	gluon-radvd \
-	gluon-neighbour-info \
-	gluon-node-info \
-	gluon-setup-mode \
-	gluon-status-page \
-	haveged \
-	iptables \
-	iwinfo \
-	ffhal-ssh-keys \
-#	gluon-ssid-changer 
-#	fharz-reboot 
-#	ffharz-reboot \
-#	ffharz-fastd \
-#	ffho-node-tuning
-
-#	freifunk-p2pblock \
-#	gluon-ssid-changer
-	
-	# support the USB stack
+# support the USB stack
 USB_PACKAGES_BASIC := \
 	kmod-usb-core \
 	kmod-usb2
