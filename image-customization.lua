@@ -1,0 +1,40 @@
+features({
+    'autoupdater',
+    'alfred',
+    'config-mode-autoupdater',
+    'config-mode-contact-info',
+    'config-mode-core',
+    'config-mode-geo-location',
+    'config-mode-hostname',
+    'config-mode-mesh-vpn',
+    'ebtables-filter-multicast',
+    'ebtables-filter-ra-dhcp',
+    'mesh-batman-adv-15',
+    'mesh-vpn-fastd',
+    'neighbour-info',
+    'node-info',
+    'radvd',
+    'respondd',
+    'setup-mode',
+    'status-page',
+    'web-admin',
+    'web-advanced',
+    'web-autoupdater',
+    'web-network',
+    'web-node-role',
+    'web-private-wifi',
+    'web-wifi-config',
+    'web-wizard',
+})
+
+if not device_class('tiny') then
+    features({
+        'wireless-encryption-wpa3',
+    })
+end
+
+packages({
+    'ffhal-ssh-keys',
+    'haveged',
+    'iwinfo',
+})
