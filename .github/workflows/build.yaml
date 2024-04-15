@@ -41,13 +41,26 @@ jobs:
       - name: building firmware
         run: |
           cd ./freifunk/gluon-changes
-          #make GLUON_TARGET=ar71xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          #make GLUON_TARGET=ar71xx-tiny GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          make GLUON_TARGET=ar71xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-          #make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
-      
+          make GLUON_TARGET=ath79-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ath79-nand GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ath79-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=brcm2708-bcm2708 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=brcm2708-bcm2709 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ipq40xx-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ipq40xx-mikrotik GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=lantiq-xrx200 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=lantiq-xway GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=mediatek-filogic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=mediatek-mt7622 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=mpc85xx-p1010 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ramips-mt7620 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ramips-mt7621 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=ramips-mt76x8 GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+          make GLUON_TARGET=x86-generic GLUON_AUTO_UPDATER_BRANCH=stable GLUON_AUTOUPDATER_ENABLED=true GLUON_REGION=eu
+
       - name: Write private key file from base64-encoded secret
         run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
       
       - name: Copy files to freifunk server
         run: scp -i /tmp/ssh-private-key.pem -R output/* github@www.freifunk-halle.org:/srv/github
+

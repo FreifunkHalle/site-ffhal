@@ -66,12 +66,12 @@ TOOLS_PACKAGES := \
 ifeq ($(GLUON_TARGET),x86-generic)
 # support the usb stack on x86 devices
 # and add a few common USB NICs
-GLUON_SITE_PACKAGES += \
-	kmod-usb-hid \
-	$(USB_PACKAGES_BASIC) \
-	$(USB_PACKAGES_STORAGE) \
-	$(USB_PACKAGES_NET) \
-	$(TOOLS_PACKAGES)
+#GLUON_SITE_PACKAGES += \
+#	kmod-usb-hid \
+#	$(USB_PACKAGES_BASIC) \
+#	$(USB_PACKAGES_STORAGE) \
+#	$(USB_PACKAGES_NET) \
+#	$(TOOLS_PACKAGES)
 endif
 
 #ar71xx-generic
