@@ -22,9 +22,9 @@ make GLUON_TARGET=ath79-generic
 make GLUON_TARGET=ath79-nand
 make GLUON_TARGET=ath79-mikrotik
 # rpi1
-make GLUON_TARGET=brcm2708-bcm2708
+make GLUON_TARGET=bcm27xx-bcm2708
 # rpi2
-make GLUON_TARGET=brcm2708-bcm2709
+make GLUON_TARGET=bcm27xx-bcm2709
 make GLUON_TARGET=ipq40xx-generic
 make GLUON_TARGET=ipq40xx-mikrotik
 make GLUON_TARGET=lantiq-xrx200
@@ -36,6 +36,7 @@ make GLUON_TARGET=ramips-mt7620
 make GLUON_TARGET=ramips-mt7621
 make GLUON_TARGET=ramips-mt76x8
 make GLUON_TARGET=x86-generic
+make GLUON_TARGET=x86-64
 ```
 
 ### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
