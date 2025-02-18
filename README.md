@@ -18,25 +18,28 @@ git clone git@github.com:FreifunkHalle/gluon-changes.git
 ### Firmware bauen
 ```
 make update
-make GLUON_TARGET=ath79-generic
-make GLUON_TARGET=ath79-nand
-make GLUON_TARGET=ath79-mikrotik
+make GLUON_TARGET=ath79-generic -j 8
+make GLUON_TARGET=ath79-nand -j 8
+make GLUON_TARGET=ath79-mikrotik -j 8
 # rpi1
-make GLUON_TARGET=bcm27xx-bcm2708
+make GLUON_TARGET=bcm27xx-bcm2708 -j 8
 # rpi2
-make GLUON_TARGET=bcm27xx-bcm2709
-make GLUON_TARGET=ipq40xx-generic
-make GLUON_TARGET=ipq40xx-mikrotik
-make GLUON_TARGET=lantiq-xrx200
-make GLUON_TARGET=lantiq-xway
-make GLUON_TARGET=mediatek-filogic
-make GLUON_TARGET=mediatek-mt7622
-make GLUON_TARGET=mpc85xx-p1010
-make GLUON_TARGET=ramips-mt7620
-make GLUON_TARGET=ramips-mt7621
-make GLUON_TARGET=ramips-mt76x8
-make GLUON_TARGET=x86-generic
-make GLUON_TARGET=x86-64
+make GLUON_TARGET=bcm27xx-bcm2709 -j 8
+make GLUON_TARGET=ipq40xx-generic -j 8
+make GLUON_TARGET=ipq40xx-mikrotik -j 8
+make GLUON_TARGET=lantiq-xrx200 -j 8
+make GLUON_TARGET=lantiq-xway -j 8
+make GLUON_TARGET=mediatek-filogic -j 8
+make GLUON_TARGET=mediatek-mt7622 -j 8
+make GLUON_TARGET=mpc85xx-p1010 -j 8
+make GLUON_TARGET=mpc85xx-p1020 -j 8
+make GLUON_TARGET=ramips-mt7620 -j 8
+make GLUON_TARGET=ramips-mt7621 -j 8
+make GLUON_TARGET=ramips-mt76x8 -j 8
+make GLUON_TARGET=x86-generic -j 8
+make GLUON_TARGET=x86-64 -j 8
+make GLUON_TARGET=sunxi-cortexa7 -j 8
+make GLUON_TARGET=ipq806x-generic -j 8
 ```
 
 ### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
