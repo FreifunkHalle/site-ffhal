@@ -18,28 +18,28 @@ git clone git@github.com:FreifunkHalle/gluon-changes.git
 ### Firmware bauen
 ```
 make update
-make GLUON_TARGET=ath79-generic -j 8
-make GLUON_TARGET=ath79-nand -j 8
-make GLUON_TARGET=ath79-mikrotik -j 8
+make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
+make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
+make GLUON_TARGET=ath79-mikrotik -j 8 || echo ath79-mikrotik build failed
 # rpi1
-make GLUON_TARGET=bcm27xx-bcm2708 -j 8
+make GLUON_TARGET=bcm27xx-bcm2708 -j 8 || echo bcm27xx-bcm2708 build failed
 # rpi2
-make GLUON_TARGET=bcm27xx-bcm2709 -j 8
-make GLUON_TARGET=ipq40xx-generic -j 8
-make GLUON_TARGET=ipq40xx-mikrotik -j 8
-make GLUON_TARGET=lantiq-xrx200 -j 8
-make GLUON_TARGET=lantiq-xway -j 8
-make GLUON_TARGET=mediatek-filogic -j 8
-make GLUON_TARGET=mediatek-mt7622 -j 8
-make GLUON_TARGET=mpc85xx-p1010 -j 8
-make GLUON_TARGET=mpc85xx-p1020 -j 8
-make GLUON_TARGET=ramips-mt7620 -j 8
-make GLUON_TARGET=ramips-mt7621 -j 8
-make GLUON_TARGET=ramips-mt76x8 -j 8
-make GLUON_TARGET=x86-generic -j 8
-make GLUON_TARGET=x86-64 -j 8
-make GLUON_TARGET=sunxi-cortexa7 -j 8
-make GLUON_TARGET=ipq806x-generic -j 8
+make GLUON_TARGET=bcm27xx-bcm2709 -j 8 || echo bcm27xx-bcm2709 build failed
+make GLUON_TARGET=ipq40xx-generic -j 8 || echo ipq40xx-generic build failed
+make GLUON_TARGET=ipq40xx-mikrotik -j 8 || echo ipq40xx-mikrotik build failed
+make GLUON_TARGET=lantiq-xrx200 -j 8 || echo lantiq-xrx200 build failed
+make GLUON_TARGET=lantiq-xway -j 8 || echo lantiq-xway build failed
+make GLUON_TARGET=mediatek-filogic -j 8 || echo mediatek-filogic build failed
+make GLUON_TARGET=mediatek-mt7622 -j 8 || echo mediatek-mt7622 build failed
+make GLUON_TARGET=mpc85xx-p1010 -j 8 || echo mpc85xx-p1010 build failed
+make GLUON_TARGET=mpc85xx-p1020 -j 8 || echo mpc85xx-p1020 build failed
+make GLUON_TARGET=ramips-mt7620 -j 8 || echo ramips-mt7620 build failed
+make GLUON_TARGET=ramips-mt7621 -j 8 || echo ramips-mt7621 build failed
+make GLUON_TARGET=ramips-mt76x8 -j 8 || echo ramips-mt76x8 build failed
+make GLUON_TARGET=x86-generic -j 8 || echo x86-generic build failed
+make GLUON_TARGET=x86-64 -j 8 || echo x86-64 build failed
+make GLUON_TARGET=sunxi-cortexa7 -j 8 || echo sunxi-cortexa7 build failed
+make GLUON_TARGET=ipq806x-generic -j 8 || echo ipq806x-generic build failed
 ```
 
 ### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
