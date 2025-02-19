@@ -48,14 +48,17 @@ jobs:
           make GLUON_TARGET=bcm27xx-bcm2709
           make GLUON_TARGET=ipq40xx-generic
           make GLUON_TARGET=ipq40xx-mikrotik
+          make GLUON_TARGET=ipq806x-generic
           make GLUON_TARGET=lantiq-xrx200
           make GLUON_TARGET=lantiq-xway
           make GLUON_TARGET=mediatek-filogic
           make GLUON_TARGET=mediatek-mt7622
           make GLUON_TARGET=mpc85xx-p1010
+          make GLUON_TARGET=mpc85xx-p1020
           make GLUON_TARGET=ramips-mt7620
           make GLUON_TARGET=ramips-mt7621
           make GLUON_TARGET=ramips-mt76x8
+          make GLUON_TARGET=sunxi-cortexa7
           make GLUON_TARGET=x86-generic
           make GLUON_TARGET=x86-64
 
