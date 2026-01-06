@@ -1,6 +1,6 @@
 # site-ffhal
 
-Site-Konfiguration für Freifunk Halle basierend auf Gluon v2023.2.x
+Site-Konfiguration für Freifunk Halle basierend auf Gluon v2025.1.x-halle
 
 ## Voraussetzungen
 
@@ -37,27 +37,37 @@ ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
 cd ~/freifunk/gluon-changes
 make update
 make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
-make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
 make GLUON_TARGET=ath79-mikrotik -j 8 || echo ath79-mikrotik build failed
+make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
 # rpi1
 make GLUON_TARGET=bcm27xx-bcm2708 -j 8 || echo bcm27xx-bcm2708 build failed
 # rpi2
 make GLUON_TARGET=bcm27xx-bcm2709 -j 8 || echo bcm27xx-bcm2709 build failed
+# rpi3
+make GLUON_TARGET=bcm27xx-bcm2710 -j 8 || echo bcm27xx-bcm2710 build failed
+# rpi4
+make GLUON_TARGET=bcm27xx-bcm2711 -j 8 || echo bcm27xx-bcm2711 build failed
 make GLUON_TARGET=ipq40xx-generic -j 8 || echo ipq40xx-generic build failed
 make GLUON_TARGET=ipq40xx-mikrotik -j 8 || echo ipq40xx-mikrotik build failed
+make GLUON_TARGET=ipq806x-generic -j 8 || echo ipq806x-generic build failed
+make GLUON_TARGET=kirkwood-generic -j 8 || echo kirkwood-generic build failed
 make GLUON_TARGET=lantiq-xrx200 -j 8 || echo lantiq-xrx200 build failed
+make GLUON_TARGET=lantiq-xrx200_legacy -j 8 || echo lantiq-xrx200_legacy build failed
 make GLUON_TARGET=lantiq-xway -j 8 || echo lantiq-xway build failed
 make GLUON_TARGET=mediatek-filogic -j 8 || echo mediatek-filogic build failed
 make GLUON_TARGET=mediatek-mt7622 -j 8 || echo mediatek-mt7622 build failed
 make GLUON_TARGET=mpc85xx-p1010 -j 8 || echo mpc85xx-p1010 build failed
 make GLUON_TARGET=mpc85xx-p1020 -j 8 || echo mpc85xx-p1020 build failed
+make GLUON_TARGET=mvebu-cortexa53-j 8 || echo mvebu-cortexa53 build failed
+make GLUON_TARGET=mvebu-cortexa9 -j 8 || echo mvebu-cortexa9 build failed
+make GLUON_TARGET=qualcommax-ipq807x -j 8 || echo qualcommax-ipq807x build failed
 make GLUON_TARGET=ramips-mt7620 -j 8 || echo ramips-mt7620 build failed
 make GLUON_TARGET=ramips-mt7621 -j 8 || echo ramips-mt7621 build failed
 make GLUON_TARGET=ramips-mt76x8 -j 8 || echo ramips-mt76x8 build failed
+make GLUON_TARGET=rockchip-armv8 -j 8 || echo rockchip-armv8 build failed
+make GLUON_TARGET=sunxi-cortexa7 -j 8 || echo sunxi-cortexa7 build failed
 make GLUON_TARGET=x86-generic -j 8 || echo x86-generic build failed
 make GLUON_TARGET=x86-64 -j 8 || echo x86-64 build failed
-make GLUON_TARGET=sunxi-cortexa7 -j 8 || echo sunxi-cortexa7 build failed
-make GLUON_TARGET=ipq806x-generic -j 8 || echo ipq806x-generic build failed
 ```
 
 ### Weitere Optionen beim Firmwarebauen (to do)
@@ -67,30 +77,6 @@ Mit Autoupdater:
 ```bash
 make GLUON_TARGET=$TARGET GLUON_AUTOUPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=1
 ```
-
-Die Variablen müssen entsprechend ersetzt werden. Ein `make all` sollte nicht verwendet werden!
-
-verfügbare `$TARGET` sind:
-- ath79-generic <- TP-Link und Ubiquiti
-- ath79-nand
-- ath79-mikrotik
-- bcm27xx-bcm2708 <- Raspberry Pi 1
-- bcm27xx-bcm2709 <- Raspberry Pi 2
-- ipq40xx-generic
-- ipq40xx-mikrotik
-- ipq806x-generic
-- lantiq-xrx200
-- lantiq-xway
-- mediatek-filogic <- WiFi 6/6E Geräte
-- mediatek-mt7622
-- mpc85xx-p1010
-- mpc85xx-p1020
-- ramips-mt7620
-- ramips-mt7621 <- D-Link DIR860L/E
-- ramips-mt76x8
-- sunxi-cortexa7 <- A20 aka Banana Pi
-- x86-generic
-- x86-64
 
 verfügbare `$BRANCH` sind:
 - beta
