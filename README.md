@@ -117,7 +117,4 @@ in CHANGELOG.md liegen die Info's zu den Änderungen!
 
 - wenn build länger zurückliegt muss das Release Datum mit `GLUON_RELEASE` mit angegeben werden
 
-`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=0.9.3~20171024`
-
-
-Buildpad: http://pad.harz.freifunk.net/p/gluon
+`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=2023.2.4.1~20260117`
