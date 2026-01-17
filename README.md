@@ -25,6 +25,15 @@ git clone git@github.com:FreifunkHalle/gluon-changes.git
 ```
 
 ### Firmware bauen
+
+Wechsle in das gluon-changes Verzeichnis:
+
+```bash
+cd ~/freifunk/gluon-changes
+```
+
+Dann Firmware bauen:
+
 ```
 make update
 make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
