@@ -67,12 +67,12 @@ make GLUON_TARGET=sunxi-cortexa7 -j 8 || echo sunxi-cortexa7 build failed
 make GLUON_TARGET=ipq806x-generic -j 8 || echo ipq806x-generic build failed
 ```
 
-### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
+### Weitere Optionen beim Firmwarebauen (to do)
 
-Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie folgt aus.
+Mit Autoupdater:
 
-```
-make GLUON_TARGET=$TARGET GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=true
+```bash
+make GLUON_TARGET=$TARGET GLUON_AUTOUPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=1
 ```
 
 Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
@@ -110,11 +110,15 @@ in CHANGELOG.md liegen die Info's zu den Änderungen!
 
 ## Image signieren (to do)
 
-- ecdsautil muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
+- ecdsautils muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
 - das Manifest muss erstellt und dann signiert werden
 
-`make manifest GLUON_BRANCH=experimental`
+```bash
+make manifest GLUON_BRANCH=experimental
+```
 
 - wenn build länger zurückliegt muss das Release Datum mit `GLUON_RELEASE` mit angegeben werden
 
-`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=2023.2.4.1~20260117`
+```bash
+make manifest GLUON_BRANCH=experimental GLUON_RELEASE=2023.2.4.1~20260117
+```
