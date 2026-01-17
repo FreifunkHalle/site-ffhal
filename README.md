@@ -75,7 +75,7 @@ Mit Autoupdater:
 make GLUON_TARGET=$TARGET GLUON_AUTOUPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=1
 ```
 
-Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
+Die Variablen müssen entsprechend ersetzt werden. Ein `make all` sollte nicht verwendet werden!
 
 verfügbare `$TARGET` sind:
 - ath79-generic <- TP-Link und Ubiquiti
@@ -104,9 +104,9 @@ verfügbare `$BRANCH` sind:
 - experimental
 - stable
 
-verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
+verfügbare `$PROFILE` findest du unter `gluon/target/$TARGET/profiles.mk`
 
-in CHANGELOG.md liegen die Info's zu den Änderungen!
+In [CHANGELOG.md](CHANGELOG.md) liegen die Infos zu den Änderungen.
 
 ## Image signieren (to do)
 
