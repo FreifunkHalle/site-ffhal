@@ -12,16 +12,20 @@ sudo apt install git build-essential libncurses-dev zlib1g-dev gawk unzip wget p
 
 ## eigene Images bauen
 Diese drei Repositories in einen Bau-Ordner klonen, z.B. ~/freifunk/ (einen ssh-Key im github hinterlegen vorher):
-```
+```bash
+cd ~/freifunk
 git clone git@github.com:FreifunkHalle/site-ffhal.git
 git clone git@github.com:FreifunkHalle/gluon-package.git
 git clone git@github.com:FreifunkHalle/gluon-changes.git
 ```
 
 ### site.conf und Freifunk-Halle Anpassungen verlinken
-```
-~/freifunk/gluon-changes$ ln -s ~/freifunk/site-ffhal/ site
-~/freifunk/gluon-changes/package$ ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
+
+```bash
+cd ~/freifunk/gluon-changes
+ln -s ~/freifunk/site-ffhal/ site
+cd ~/freifunk/gluon-changes/package
+ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
 ```
 
 ### Firmware bauen
