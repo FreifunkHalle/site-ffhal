@@ -115,3 +115,9 @@ make manifest GLUON_BRANCH=experimental
 ```bash
 make manifest GLUON_BRANCH=experimental GLUON_RELEASE=2023.2.4.1~20260117
 ```
+
+## Weitere Informationen
+
+- [Gluon Dokumentation](https://gluon.readthedocs.io/) – Umfassende Dokumentation zum Gluon Framework
+- [Gluon Target List](https://gluon.readthedocs.io/en/latest/user/supported_devices.html) – Liste aller unterstützten Geräte
+- [Freifunk Halle Website](https://halle.freifunk.net/)
