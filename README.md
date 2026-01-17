@@ -7,7 +7,7 @@ Site-Konfiguration für Freifunk Halle basierend auf Gluon v2023.2.x
 Für den Build-Prozess werden folgende Pakete benötigt:
 
 ```bash
-sudo apt install git build-essential libncurses-dev zlib1g-dev gawk unzip wget python3
+sudo apt install git build-essential libncurses-dev zlib1g-dev gawk gettext libssl-dev xsltproc rsync qemu-utils unzip wget python3
 ```
 
 ## eigene Images bauen
@@ -38,7 +38,7 @@ cd ~/freifunk/gluon-changes
 
 Dann Firmware bauen:
 
-```
+```bash
 make update
 make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
 make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
