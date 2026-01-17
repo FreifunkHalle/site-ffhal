@@ -33,15 +33,8 @@ ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
 
 ### Firmware bauen
 
-Wechsle in das gluon-changes Verzeichnis:
-
 ```bash
 cd ~/freifunk/gluon-changes
-```
-
-Dann Firmware bauen:
-
-```bash
 make update
 make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
 make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
