@@ -2,6 +2,14 @@
 
 Site-Konfiguration für Freifunk Halle basierend auf Gluon v2023.2.x
 
+## Voraussetzungen
+
+Für den Build-Prozess werden folgende Pakete benötigt:
+
+```bash
+sudo apt install git build-essential libncurses-dev zlib1g-dev gawk unzip wget python3
+```
+
 ## eigene Images bauen
 Diese drei Repositories in einen Bau-Ordner klonen, z.B. ~/freifunk/ (einen ssh-Key im github hinterlegen vorher):
 ```
