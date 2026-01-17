@@ -1,5 +1,6 @@
 # site-ffhal
-site.conf-Datei für Freifunk Halle Firmware 1.0.1, Gluon-Release 2018.2.x, OpenWRT v2018.06-SNAPSHOT r7835+24-89808e211c
+
+Site-Konfiguration für Freifunk Halle basierend auf Gluon v2023.2.x
 
 ## eigene Images bauen
 Diese drei Repositories in einen Bau-Ordner klonen, z.B. ~/freifunk/ (einen ssh-Key im github hinterlegen vorher):
