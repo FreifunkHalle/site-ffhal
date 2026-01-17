@@ -67,25 +67,26 @@ make GLUON_TARGET=$TARGET GLUON_REGION=eu GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUO
 Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
 
 verfügbare `$TARGET` sind:
-- ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
-- ar71xx-tiny <- WR841 usw. mit 4MB Flash
-- ar71xx-nand
-- ath79-generic
-- brcm2708-bcm2708 <- Raspberry Pi 1
-- brcm2708-bcm2709 <- Raspberry Pi 2
-- brcm2708-bcm2710 <- Raspberry Pi 3
-- mpc85xx-generic
+- ath79-generic <- TP-Link und Ubiquiti
+- ath79-nand
+- ath79-mikrotik
+- bcm27xx-bcm2708 <- Raspberry Pi 1
+- bcm27xx-bcm2709 <- Raspberry Pi 2
+- ipq40xx-generic
+- ipq40xx-mikrotik
+- ipq806x-generic
+- lantiq-xrx200
+- lantiq-xway
+- mediatek-filogic <- WiFi 6/6E Geräte
+- mediatek-mt7622
+- mpc85xx-p1010
+- mpc85xx-p1020
+- ramips-mt7620
 - ramips-mt7621 <- D-Link DIR860L/E
+- ramips-mt76x8
+- sunxi-cortexa7 <- A20 aka Banana Pi
 - x86-generic
-- x86-geode
 - x86-64
-- ar71xx-mikrotik
-- ipq806x
-- mvebu
-- ramips-mt7628
-- ramips-rt305x
-- x86-kvm_guest
-- sunix <- A20 aka Banana Pi
 
 verfügbare `$BRANCH` sind:
 - beta
