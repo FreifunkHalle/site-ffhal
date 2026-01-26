@@ -1,22 +1,40 @@
 # site-ffhal
-site.conf-Datei für Freifunk Halle Firmware 1.0.1, Gluon-Release 2018.2.x, OpenWRT v2018.06-SNAPSHOT r7835+24-89808e211c
+
+Site-Konfiguration für Freifunk Halle basierend auf Gluon v2023.2.x
+
+## Voraussetzungen
+
+Für den Build-Prozess werden folgende Pakete benötigt:
+
+```bash
+sudo apt install git build-essential libncurses-dev zlib1g-dev gawk gettext libssl-dev xsltproc rsync qemu-utils unzip wget python3
+```
 
 ## eigene Images bauen
-Diese drei Repositories in einen Bau-Ordner klonen, z.B. ~/freifunk/ (einen ssh-Key im github hinterlegen vorher):
-```
-git clone git@github.com:FreifunkHalle/site-ffhal.git
-git clone git@github.com:FreifunkHalle/gluon-package.git
-git clone git@github.com:FreifunkHalle/gluon-changes.git
+
+Die drei benötigten Repositories klonen:
+
+```bash
+mkdir -p ~/freifunk
+cd ~/freifunk
+git clone https://github.com/FreifunkHalle/site-ffhal
+git clone https://github.com/FreifunkHalle/gluon-package
+git clone https://github.com/FreifunkHalle/gluon-changes
 ```
 
 ### site.conf und Freifunk-Halle Anpassungen verlinken
-```
-~/freifunk/gluon-changes$ ln -s ~/freifunk/site-ffhal/ site
-~/freifunk/gluon-changes/package$ ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
+
+```bash
+cd ~/freifunk/gluon-changes
+ln -s ~/freifunk/site-ffhal/ site
+cd ~/freifunk/gluon-changes/package
+ln -s ~/freifunk/gluon-package/ffhal-ssh-keys/
 ```
 
 ### Firmware bauen
-```
+
+```bash
+cd ~/freifunk/gluon-changes
 make update
 make GLUON_TARGET=ath79-generic -j 8 || echo ath79-generic build failed
 make GLUON_TARGET=ath79-nand -j 8 || echo ath79-nand build failed
@@ -42,61 +60,64 @@ make GLUON_TARGET=sunxi-cortexa7 -j 8 || echo sunxi-cortexa7 build failed
 make GLUON_TARGET=ipq806x-generic -j 8 || echo ipq806x-generic build failed
 ```
 
-### Weitere Optionen beim Firmwarebauen (übernommener Text Freifunk Harz) (to do)
+### Weitere Optionen beim Firmwarebauen (to do)
 
-Wenn ein komplette Architektur gebaut werden soll, dann sieht der Befehl wie folgt aus.
+Mit Autoupdater:
 
-```
-make GLUON_TARGET=$TARGET GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=true
-```
-Bei ar71xx-gernic muss noch die REGION mit gegeben werden.
-
-```
-make GLUON_TARGET=$TARGET GLUON_REGION=eu GLUON_AUTO_UPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=true
+```bash
+make GLUON_TARGET=$TARGET GLUON_AUTOUPDATER_BRANCH=$BRANCH GLUON_AUTOUPDATER_ENABLED=1
 ```
 
-Die Variabeln müssen entsprechend ersetzt werden! Ein `make all` sollte nicht verwendet werden!
+Die Variablen müssen entsprechend ersetzt werden. Ein `make all` sollte nicht verwendet werden!
 
 verfügbare `$TARGET` sind:
-- ar71xx-generic <- TP-Link und Ubqiuiti <- diverse
-- ar71xx-tiny <- WR841 usw. mit 4MB Flash
-- ar71xx-nand
-- ath79-generic
-- brcm2708-bcm2708 <- Raspberry Pi 1
-- brcm2708-bcm2709 <- Raspberry Pi 2
-- brcm2708-bcm2710 <- Raspberry Pi 3
-- mpc85xx-generic
+- ath79-generic <- TP-Link und Ubiquiti
+- ath79-nand
+- ath79-mikrotik
+- bcm27xx-bcm2708 <- Raspberry Pi 1
+- bcm27xx-bcm2709 <- Raspberry Pi 2
+- ipq40xx-generic
+- ipq40xx-mikrotik
+- ipq806x-generic
+- lantiq-xrx200
+- lantiq-xway
+- mediatek-filogic <- WiFi 6/6E Geräte
+- mediatek-mt7622
+- mpc85xx-p1010
+- mpc85xx-p1020
+- ramips-mt7620
 - ramips-mt7621 <- D-Link DIR860L/E
+- ramips-mt76x8
+- sunxi-cortexa7 <- A20 aka Banana Pi
 - x86-generic
-- x86-geode
 - x86-64
-- ar71xx-mikrotik
-- ipq806x
-- mvebu
-- ramips-mt7628
-- ramips-rt305x
-- x86-kvm_guest
-- sunix <- A20 aka Banana Pi
 
 verfügbare `$BRANCH` sind:
 - beta
 - experimental
 - stable
 
-verfügbare `$PROFILE` findest du unter `gluon\target\$TARGET\profiles.mk`
+verfügbare `$PROFILE` findest du unter `gluon/target/$TARGET/profiles.mk`
 
-in CHANGELOG.md liegen die Info's zu den Änderungen!
+In [CHANGELOG.md](CHANGELOG.md) liegen die Infos zu den Änderungen.
 
 ## Image signieren (to do)
 
-- ecdsautil muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
+- ecdsautils muss installiert und eingerichtet werden, damit die Firmware signiert werden kann
 - das Manifest muss erstellt und dann signiert werden
 
-`make manifest GLUON_BRANCH=experimental`
+```bash
+make manifest GLUON_BRANCH=experimental
+```
 
 - wenn build länger zurückliegt muss das Release Datum mit `GLUON_RELEASE` mit angegeben werden
 
-`make manifest GLUON_BRANCH=experimental GLUON_RELEASE=0.9.3~20171024`
+```bash
+make manifest GLUON_BRANCH=experimental GLUON_RELEASE=2023.2.4.1~20260117
+```
 
+## Weitere Informationen
 
-Buildpad: http://pad.harz.freifunk.net/p/gluon
+- [Gluon Dokumentation](https://gluon.readthedocs.io/) – Umfassende Dokumentation zum Gluon Framework
+- [Gluon Target List](https://gluon.readthedocs.io/en/latest/user/supported_devices.html) – Liste aller unterstützten Geräte
+- [Freifunk Halle Website](https://halle.freifunk.net/)
