@@ -1,4 +1,9 @@
 # Changelog
+## 20260329
+- Upgrade auf Gluon v2025.1.x-halle (OpenWrt 24.10, batman-adv 2024.3)
+- Erweiterte Build-Targets bei Freifunk Halle (u.a. RPi 3/4, Qualcomm IPQ807x, Rockchip)
+- GitHub Actions auf Ubuntu 24.04 aktualisiert
+
 ## 20191009
 - Freifunk Halle Firmware 1.0.1, Gluon-Release 2018.2.x, OpenWRT v2018.06-SNAPSHOT r7835+24-89808e211c
 - Den Zeitserver der Physikalisch-Technische-Bundesanstalt eingetragen
@@ -114,4 +119,4 @@ nutzen. ]
 - mac: Macadresse geändert
 - fastd-vpn: zweiten Knoten hinzugefügt
 - autoupdater aktiviert
-- openvpn-polarssl Paket hinzugefügt 
+- openvpn-polarssl Paket hinzugefügt
