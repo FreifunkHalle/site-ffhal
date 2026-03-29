@@ -7,7 +7,7 @@ Site-Konfiguration für Freifunk Halle basierend auf Gluon v2025.1.x-halle
 Für den Build-Prozess werden folgende Pakete benötigt:
 
 ```bash
-sudo apt install git build-essential libncurses-dev zlib1g-dev gawk gettext libssl-dev xsltproc rsync qemu-utils unzip wget python3
+sudo apt install git build-essential libncurses-dev zlib1g-dev gawk gettext libssl-dev xsltproc rsync qemu-utils unzip wget python3 clang llvm
 ```
 
 ## eigene Images bauen
