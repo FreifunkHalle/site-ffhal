@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs: 
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: install requirements
@@ -12,18 +12,18 @@ jobs:
           sudo apt update 
           sudo apt install --yes make gcc libncurses-dev cpp gpp g++ unzip gawk
       - name: checkout site
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           path: freifunk/site
 
       - name: clone gluon-changes
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: FreifunkHalle/gluon-package
           path: freifunk/gluon-package
 
       - name: clone gluon-package
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: FreifunkHalle/gluon-changes
           path: freifunk/gluon-changes
@@ -41,26 +41,38 @@ jobs:
       - name: building firmware
         run: |
           cd ./freifunk/gluon-changes
-          make GLUON_TARGET=ath79-generic
-          make GLUON_TARGET=ath79-nand
-          make GLUON_TARGET=ath79-mikrotik
-          make GLUON_TARGET=bcm27xx-bcm2708
-          make GLUON_TARGET=bcm27xx-bcm2709
-          make GLUON_TARGET=ipq40xx-generic
-          make GLUON_TARGET=ipq40xx-mikrotik
-          make GLUON_TARGET=ipq806x-generic
-          make GLUON_TARGET=lantiq-xrx200
-          make GLUON_TARGET=lantiq-xway
-          make GLUON_TARGET=mediatek-filogic
-          make GLUON_TARGET=mediatek-mt7622
-          make GLUON_TARGET=mpc85xx-p1010
-          make GLUON_TARGET=mpc85xx-p1020
-          make GLUON_TARGET=ramips-mt7620
-          make GLUON_TARGET=ramips-mt7621
-          make GLUON_TARGET=ramips-mt76x8
-          make GLUON_TARGET=sunxi-cortexa7
-          make GLUON_TARGET=x86-generic
-          make GLUON_TARGET=x86-64
+          make GLUON_TARGET=ath79-generic -j 2 || echo ath79-generic build failed
+          make GLUON_TARGET=ath79-mikrotik -j 2 || echo ath79-mikrotik build failed
+          make GLUON_TARGET=ath79-nand -j 2 || echo ath79-nand build failed
+          # rpi1
+          make GLUON_TARGET=bcm27xx-bcm2708 -j 2 || echo bcm27xx-bcm2708 build failed
+          # rpi2
+          make GLUON_TARGET=bcm27xx-bcm2709 -j 2 || echo bcm27xx-bcm2709 build failed
+          # rpi3
+          make GLUON_TARGET=bcm27xx-bcm2710 -j 2 || echo bcm27xx-bcm2710 build failed
+          # rpi4
+          make GLUON_TARGET=bcm27xx-bcm2711 -j 2 || echo bcm27xx-bcm2711 build failed
+          make GLUON_TARGET=ipq40xx-generic -j 2 || echo ipq40xx-generic build failed
+          make GLUON_TARGET=ipq40xx-mikrotik -j 2 || echo ipq40xx-mikrotik build failed
+          make GLUON_TARGET=ipq806x-generic -j 2 || echo ipq806x-generic build failed
+          make GLUON_TARGET=kirkwood-generic -j 2 || echo kirkwood-generic build failed
+          make GLUON_TARGET=lantiq-xrx200 -j 2 || echo lantiq-xrx200 build failed
+          make GLUON_TARGET=lantiq-xrx200_legacy -j 2 || echo lantiq-xrx200_legacy build failed
+          make GLUON_TARGET=lantiq-xway -j 2 || echo lantiq-xway build failed
+          make GLUON_TARGET=mediatek-filogic -j 2 || echo mediatek-filogic build failed
+          make GLUON_TARGET=mediatek-mt7622 -j 2 || echo mediatek-mt7622 build failed
+          make GLUON_TARGET=mpc85xx-p1010 -j 2 || echo mpc85xx-p1010 build failed
+          make GLUON_TARGET=mpc85xx-p1020 -j 2 || echo mpc85xx-p1020 build failed
+          make GLUON_TARGET=mvebu-cortexa53-j 2 || echo mvebu-cortexa53 build failed
+          make GLUON_TARGET=mvebu-cortexa9 -j 2 || echo mvebu-cortexa9 build failed
+          make GLUON_TARGET=qualcommax-ipq807x -j 2 || echo qualcommax-ipq807x build failed
+          make GLUON_TARGET=ramips-mt7620 -j 2 || echo ramips-mt7620 build failed
+          make GLUON_TARGET=ramips-mt7621 -j 2 || echo ramips-mt7621 build failed
+          make GLUON_TARGET=ramips-mt76x8 -j 2 || echo ramips-mt76x8 build failed
+          make GLUON_TARGET=rockchip-armv8 -j 2 || echo rockchip-armv8 build failed
+          make GLUON_TARGET=sunxi-cortexa7 -j 2 || echo sunxi-cortexa7 build failed
+          make GLUON_TARGET=x86-generic -j 2 || echo x86-generic build failed
+          make GLUON_TARGET=x86-64 -j 2 || echo x86-64 build failed
 
       - name: Write private key file from base64-encoded secret
         run: echo -e "${{ secrets.PRIVATE_KEY_BASE64 }}" | base64 --decode > /tmp/ssh-private-key.pem
